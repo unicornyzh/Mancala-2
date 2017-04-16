@@ -19,11 +19,12 @@ public class GreedyAI {
 		{
 		for(i=1;i<=s.PITSNUMBER;i++)
 		 {
-		//	 System.out.println(i);
+			if(s.pitsA[i-1]==0) continue;
              next=s.nextMoveState(i, 'a', 0);
+           //  System.out.println(i+" "+next.pitsA[i]);
              if(next.player==s.player)
              {
-            	 System.out.println("****");
+            //	 System.out.println("****");
             	 r=Greedy(next);
             	 r.pit=i;
              }
@@ -37,22 +38,26 @@ public class GreedyAI {
             	 max=r.max;
             	 pit=r.pit;
              }
-             System.out.println(r.max+" "+r.pit);
+            // System.out.println(r.max+" "+r.pit);
 		 }
 		}
 		if(player)  //player B
 		{
 		for(i=1;i<=s.PITSNUMBER;i++)
 		{
+			if(s.pitsB[i-1]==0) continue;
 			next=s.nextMoveState(i, 'b', 0);
+			//   if(i==5)
+				//	Board.printBoard(next);
 		       if(next.player==s.player)
 	             {
+		    	//   System.out.println("****");
 	            	 r=Greedy(next);
 	            	 r.pit=i;
 	             }
 	             else
 	             {
-	                r.max=next.mancalaA;
+	                r.max=next.mancalaB;
 	                r.pit=i;
 	             }
 	        if(r.max>=max)
@@ -60,7 +65,7 @@ public class GreedyAI {
 	            	 max=r.max;
 	            	 pit=r.pit;
 	             }
-	        System.out.println("xdd");
+	      // System.out.println(r.max+" "+r.pit);
 		}
 		}
 		r.pit=pit;

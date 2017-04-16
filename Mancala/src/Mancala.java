@@ -9,7 +9,7 @@ public class Mancala {
         BoardState boardState=new BoardState();
         Board.printBoard(boardState);
         r=player1.Greedy(boardState);
-        System.out.println(r.pit);
+        System.out.println("playerA move position: "+r.pit);
         if(!boardState.player)
         boardState.updateMove(r.pit,'a' , 0);
         else
