@@ -40,7 +40,7 @@ class BoardState implements Cloneable {
         }
         if (n != 0) {
             if (side == 'a') {
-                if (this.pitsA[n-1]==0){
+                if (this.pitsA[n - 1] == 0) {
                     System.out.println("No marbles in this pit");
                     return;
                 }
@@ -57,7 +57,7 @@ class BoardState implements Cloneable {
                 }
             }
             if (side == 'b') {
-                if (this.pitsB[n-1]==0){
+                if (this.pitsB[n - 1] == 0) {
                     System.out.println("No marbles in this pit");
                     return;
                 }
@@ -179,6 +179,7 @@ class BoardState implements Cloneable {
 
     /**
      * move marbles in pits of player B
+     *
      * @param n move the n-th pit
      * @return the marbles left when it reaches the end
      */
@@ -235,8 +236,9 @@ class BoardState implements Cloneable {
     /**
      * return state after one move for search tree
      * must initialize @param fromMancala as 0
-     * @param n pit number
-     * @param side who takes next move
+     *
+     * @param n           pit number
+     * @param side        who takes next move
      * @param fromMancala
      * @return
      */
@@ -254,7 +256,7 @@ class BoardState implements Cloneable {
         }
         if (n != 0) {
             if (side == 'a') {
-                if (this.pitsA[n-1]==0){
+                if (this.pitsA[n - 1] == 0) {
                     System.out.println("No marbles in this pit");
                     return nextState;
                 }
@@ -271,7 +273,7 @@ class BoardState implements Cloneable {
                 }
             }
             if (side == 'b') {
-                if (this.pitsB[n-1]==0){
+                if (this.pitsB[n - 1] == 0) {
                     System.out.println("No marbles in this pit");
                     return nextState;
                 }
@@ -289,9 +291,9 @@ class BoardState implements Cloneable {
             }
         } else {
             if (side == 'a') {
-                int surplus = nextState.moveInPitsB(n, fromMancala);
+                int surplus = nextState.moveInPitsA(n, fromMancala);
                 if (surplus > 1) {
-                    if (!nextState.player) {// is player A's turn
+                    if (nextState.player == false) {// is player A's turn
                         nextState.mancalaA += 1;
                         nextState.updateMove(0, 'b', surplus - 1);
                     } else {
@@ -299,7 +301,7 @@ class BoardState implements Cloneable {
                     }
                 }
                 if (surplus == 1) {
-                    if (!nextState.player) {
+                    if (nextState.player == false) {
                         nextState.mancalaA += 1;
                     } else {
                         nextState.updateMove(0, 'b', 1);
