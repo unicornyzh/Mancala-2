@@ -1,8 +1,7 @@
+class Result {
+    int max;
+    int pit;
 
-public class Result {
-     int max;
-     int pit;
-     
-     public Result()
-     {}
+    public Result() {
+    }
 }
