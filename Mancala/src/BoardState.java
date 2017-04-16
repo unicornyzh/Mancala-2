@@ -41,6 +41,10 @@ class BoardState implements Cloneable {
         }
         if (n != 0) {
             if (side == 'a') {
+                if (this.pitsA[n-1]==0){
+                    System.out.println("No marbles in this pit");
+                    return;
+                }
                 int surplus = this.moveInPitsA(n, 0);
                 if (surplus > 1) {
                     this.mancalaA += 1;
@@ -54,6 +58,10 @@ class BoardState implements Cloneable {
                 }
             }
             if (side == 'b') {
+                if (this.pitsA[n-1]==0){
+                    System.out.println("No marbles in this pit");
+                    return;
+                }
                 int surplus = this.moveInPitsB(n, 0);
                 if (surplus > 1) {
                     this.mancalaB += 1;
@@ -247,6 +255,10 @@ class BoardState implements Cloneable {
         }
         if (n != 0) {
             if (side == 'a') {
+                if (this.pitsA[n-1]==0){
+                    System.out.println("No marbles in this pit");
+                    return nextState;
+                }
                 int surplus = nextState.moveInPitsA(n, 0);
                 if (surplus > 1) {
                     nextState.mancalaA += 1;
@@ -260,6 +272,10 @@ class BoardState implements Cloneable {
                 }
             }
             if (side == 'b') {
+                if (this.pitsB[n-1]==0){
+                    System.out.println("No marbles in this pit");
+                    return nextState;
+                }
                 int surplus = nextState.moveInPitsB(n, 0);
                 if (surplus > 1) {
                     nextState.mancalaB += 1;
