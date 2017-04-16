@@ -6,7 +6,6 @@ class BoardState implements Cloneable {
     int mancalaA, mancalaB;
     int[] pitsA = new int[PITSNUMBER], pitsB = new int[PITSNUMBER];
     boolean player; // the player in turn, false -> player A
-
     /**
      * initialize board
      */

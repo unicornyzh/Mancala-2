@@ -6,6 +6,13 @@ public class Mancala {
         BoardState.PITSNUMBER=Integer.parseInt(args[0]);
         BoardState boardState=new BoardState();
         Board.printBoard(boardState);
+        r=player1.Greedy(boardState);
+        System.out.println("playerA move position: "+r.pit);
+        if(!boardState.player)
+        boardState.updateMove(r.pit,'a' , 0);
+        else
+        boardState.updateMove(r.pit,'b' , 0);
+        Board.printBoard(boardState);
     }
 
     /**
