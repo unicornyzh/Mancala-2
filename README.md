@@ -1,2 +1,2 @@
 # Mancala
-Mancala Game an AI
+Mancala Game and AI
