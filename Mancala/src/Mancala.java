@@ -2,8 +2,10 @@
  * Created by zhiqinhuang on 4/9/17.
  */
 public class Mancala {
+	static GreedyAI player1=new GreedyAI();
+	static Result r=new Result();
     public static void main(String[] args){
-        BoardState.PITSNUMBER=Integer.parseInt(args[0]);
+        BoardState.PITSNUMBER=7;//Integer.parseInt(args[0]);
         BoardState boardState=new BoardState();
         Board.printBoard(boardState);
         r=player1.Greedy(boardState);

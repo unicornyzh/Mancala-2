@@ -1,5 +1,12 @@
-/**
- * Created by zhiqinhuang on 4/16/17.
- */
+
 class Evaluation {
+    int value;
+
+    Evaluation(){
+        this.value=0;
+    }
+
+    void evaluate(BoardState boardState){
+        this.value=boardState.mancalaA-boardState.mancalaB;
+    }
 }

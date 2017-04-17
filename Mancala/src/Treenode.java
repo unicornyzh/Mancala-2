@@ -1,6 +1,10 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by hasee on 2017/4/15.
+ */
 public class Treenode {
     private int parentId;
     private int selfId;
@@ -9,8 +13,6 @@ public class Treenode {
     private int player;
     private int pit;
     private int marbles;
-    ;
-
     public Treenode() {
         initChildList();
     }
@@ -19,36 +21,33 @@ public class Treenode {
         this.getParentNode();
         initChildList();
     }
-
     // add a new child node
-    public void addChildnode(Treenode cnode) {
+    public void addChildnode(Treenode cnode){
         initChildList();
         childList.add(cnode);
     }
-
-    public Treenode findTreenodeById(int id) {
-        if (this.selfId == id)
-            return this;
-        if (childList.isEmpty() || childList == null) {
-            return null;
-        } else {
-            int childNumber = childList.size();
-            for (int i = 0; i < childNumber; i++) {
-                Treenode child = childList.get(i);
-                Treenode resultNode = child.findTreenodeById(id);
-                if (resultNode != null) {
-                    return resultNode;
-                }
-            }
-            return null;
-        }
-    }
-
-    public void initChildList() {
-        if (childList == null)
+    
+    public Treenode findTreenodeById(int id) {  
+        if (this.selfId == id)  
+            return this;  
+        if (childList.isEmpty() || childList == null) {  
+            return null;  
+        } else {  
+            int childNumber = childList.size();  
+            for (int i = 0; i < childNumber; i++) {  
+                Treenode child = childList.get(i);  
+                Treenode resultNode = child.findTreenodeById(id);  
+                if (resultNode != null) {  
+                    return resultNode;  
+                }  
+            }  
+            return null;  
+        }  
+    }  
+    public void initChildList(){
+        if(childList==null)
             childList = new ArrayList<Treenode>();
     }
-
     /* return parent node sets */
     public List<Treenode> getElders() {
         List<Treenode> elderList = new ArrayList<Treenode>();
@@ -111,25 +110,31 @@ public class Treenode {
     public void setParentNode(Treenode parentNode) {
         this.parentNode = parentNode;
     }
-
-    public void setPlayer(int player) {
-        this.player = player;
+    
+    public void setPlayer(int player)
+    {
+    	this.player=player;
     }
-
-    public int getPlayer() {
-        return this.player;
+    
+    public int getPlayer()
+    {
+    	return this.player;
     }
-
-    public void setnumberofmarbles(int n, int marbles) {
-        this.pit = n;
-        this.marbles = marbles;
+    
+    public void setnumberofmarbles(int n,int marbles)
+    {
+    	this.pit=n;
+    	this.marbles=marbles;
     }
-
-    public int getpit() {
-        return this.pit;
+    
+    public int getpit()
+    {
+    	return this.pit;
     }
-
-    public int getmarbles() {
-        return marbles;
+    
+    public int getmarbles()
+    {
+    	return marbles;
     }
 }
+
