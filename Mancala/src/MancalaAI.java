@@ -21,16 +21,9 @@ class MancalaAI {
         this.depth=depth;
     }
 
-    void Seaching(BoardState boardState){
-
+    void Searching(BoardState boardState){
+        
     }
 
-    /**
-     * evaluate the current state
-     * positive result means it is beneficial to player B
-     * @param boardState
-     */
-    int staticEvaluationB(BoardState boardState){
-        return boardState.mancalaB-boardState.mancalaA;
-    }
+ 
 }
